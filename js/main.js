@@ -14,7 +14,7 @@ $(document).ready(function () {
       offset: '-150',
       duration: '180%'
     })
-    .setTween(TweenMax.to(itemScroll, 1, {y: '-100%', ease:Linear.easeNone}))
+    .setTween(itemScroll, 1, {y: '-100%', ease:Linear.easeNone})
     .addTo(controller)
   })
 
@@ -23,20 +23,31 @@ $(document).ready(function () {
     var itemRight = $(this).find('.right-block')
     var itemLeft = $(this).find('.left-block')
 
-    var tweenSlideIn = new TimelineMax()
+    var SlideIn = new TimelineMax()
     var itemLeft = TweenMax.from(itemLeft, 1,{ x: '-30%' , opacity: 0});
     var itemRight = TweenMax.from(itemRight, 1,{ x: '30%' , opacity: 0});
-      tweenSlideIn
-        .add(itemLeft)
-        .add(itemRight, 0.2);
+      SlideIn.add(itemLeft).add(itemRight, 0);
 
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 'onEnter',
-      reverse: true,
       duration: '120%'
     })
-    .setTween(tweenSlideIn)
+    .setTween(SlideIn)
+    .addTo(controller)
+
+  })
+
+  //Line Animation
+  $('.line-wrapper').each(function(){
+    var line = $(this).find('.line');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 'onEnter',
+      offset: '200',
+      duration: '95%'
+    })
+    .setTween(line, 1, {scaleY:0, opacity: '0'})
     .addTo(controller)
   })
 
