@@ -5,7 +5,7 @@ body {
 .header {
   background: #ececec;
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,42 +13,55 @@ body {
 }
 .scroll-blocks {
   display: flex;
-  margin: 100px auto;
-  margin-left: 5%;
+  margin: 100px auto 100px 15%;
 }
-.left-content, .right-content {
+.highlight-block, .content-block {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-h2 {
-  padding-top: 50px;
-}
-.left-content {
+
+.highlight-block {
   background: orange;
-  width: 40%;
-  position: relative;
+  width: 30%;
   opacity: 0.8;
+  position: relative;
   left: 5%;
-  top: 100px;
-  height: 150px;
+  top: 300px;
+  height: 180px;
   z-index: 1;
 }
-.right-content {
+.scroll-blocks.right {
+  margin: 100px auto 100px 15%;
+}
+.scroll-blocks.right .highlight-block {
+  left: -5%;
+}
+
+.content-block {
   background: navy;
   color: white;
   width: 50%;
-  height: 200px;
+  height: 400px;
+  z-index: 0;
 }
 .side-blocks {
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .left-block, .right-block {
   background: grey;
-  height: 200px;
-  display: inline-block;
-  width: 40%;
+  height: 400px;
+  width: 49.5%;
   color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .right-block {
   position: relative;
