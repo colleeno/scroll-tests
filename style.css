@@ -2,15 +2,16 @@ body {
   font-family: sans-serif;
   margin: 0 auto;
 }
-.placeholder {
+.header {
   background: #ececec;
   width: 100%;
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
-.section-one {
+.scroll-blocks {
   display: flex;
   margin: 100px auto;
 }
@@ -25,10 +26,26 @@ body {
   left: 100px;
   top: 25px;
   height: 150px;
+  z-index: 1;
 }
 .right-content {
   background: navy;
   color: white;
   width: 50%;
   height: 200px;
+}
+.side-blocks {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.left-block, .right-block {
+  background: grey;
+  height: 200px;
+  display: inline-block;
+  width: 40%;
+}
+.right-block {
+  position: relative;
+  top: 40px;
 }

@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Skrollr test</title>
+    <title>scroll test</title>
   </head>
   <body>
   <main>
-    <div class="placeholder">
-      <h1>header placeholder</h1>
+    <div class="header">
+      <h1>header v1 <br /> <a href="#">v2</a></h1>
     </div>
-    <div class="section-one" id="slide-1">
+
+    <div class="scroll-blocks">
       <div class="left-content">
         <h2>left stuff</h2>
       </div>
@@ -19,11 +20,32 @@
         <h2>right stuff</h2>
       </div>
     </div>
+
+    <div class="side-blocks">
+      <div class="left-block">
+        <h2>left stuff</h2>
+      </div>
+      <div class="right-block">
+        <h2>right stuff</h2>
+      </div>
+    </div>
+
+    <div class="scroll-blocks">
+      <div class="left-content">
+        <h2>left stuff</h2>
+      </div>
+      <div class="right-content">
+        <h2>right stuff</h2>
+      </div>
+    </div>
+
   </main>
   <footer>
   </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/skrollr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
