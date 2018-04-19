@@ -11,25 +11,38 @@ $(document).ready(function () {
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 'onEnter',
-      offset: '150',
-      duration: '150%'
+      offset: '-150',
+      duration: '180%'
     })
-    .setTween(TweenMax.to(this, 1, {y: '-40%', ease:Power0.easeNone}))
+    .setTween(TweenMax.to(this, 1, {y: '-100%', ease:Power0.easeNone}))
     .addTo(controller)
   })
 
-  //Right blocks scroll
-  $('.scroll-blocks .right-content').each(function(){
-    var itemScroll = this;
-    var scene = new ScrollMagic.Scene({
-      triggerElement: this,
-      triggerHook: 'onEnter',
-      offset: '150',
-      duration: '150%'
-    })
-    .setTween(TweenMax.to(this, 1, {y: '-20%', ease:Power0.easeNone}))
-    .addTo(controller)
-  })
+  //Side Blocks - Enter
+  // $('.scroll-blocks .left-content').each(function(){
+  //   var itemScroll = this;
+  //   var scene = new ScrollMagic.Scene({
+  //     triggerElement: this,
+  //     triggerHook: 'onEnter',
+  //     offset: '-150',
+  //     duration: '150%'
+  //   })
+  //   .setTween(TweenMax.to(this, 1, {y: '-50%', ease:Power0.easeNone}))
+  //   .addTo(controller)
+  // })
+
+  // //Right blocks scroll
+  // $('.scroll-blocks .right-content').each(function(){
+  //   var itemScroll = this;
+  //   var scene = new ScrollMagic.Scene({
+  //     triggerElement: this,
+  //     triggerHook: 'onEnter',
+  //     offset: '150',
+  //     duration: '150%'
+  //   })
+  //   .setTween(TweenMax.to(this, 1, {y: '-20%', ease:Power0.easeNone}))
+  //   .addTo(controller)
+  // })
 
   // //Set up scene
   // var blockScroll = new ScrollMagic.Scene({

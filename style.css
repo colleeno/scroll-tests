@@ -23,8 +23,8 @@ body {
   width: 40%;
   position: relative;
   opacity: 0.8;
-  left: 100px;
-  top: 25px;
+  left: 5%;
+  top: 100px;
   height: 150px;
   z-index: 1;
 }
