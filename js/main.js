@@ -5,6 +5,23 @@ $(document).ready(function () {
   //Set up controller
   var controller = new ScrollMagic.Controller()
 
+  //Header Block
+  $('.header').each(function(){
+    var itemScroll = $(this).find('.header-highlight');
+    var timeline = new TimelineMax()
+    fadeTop = TweenMax.to(this, 1,{  backgroundColor: 'rgba(236,236,236, 0)'})
+    scrollBlock = TweenMax.to(itemScroll, 1, {y: '-60%', ease:Linear.easeNone})
+    timeline.add(fadeTop).add(scrollBlock, 0)
+    var scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 'onLeave',
+      duration: '100%'
+    })
+    // .setTween(itemScroll, 1, {y: '-50%', ease:Linear.easeNone})
+    .setTween(timeline)
+    .addTo(controller)
+  })
+
   //Scroll Block
   $('.scroll-blocks').each(function(){
     var itemScroll = $(this).find('.highlight-block');
@@ -34,6 +51,16 @@ $(document).ready(function () {
       duration: '120%'
     })
     .setTween(SlideIn)
+      // to run in one direction
+    // .on('enter', function(event){
+    //   if (event.scrollDirection != 'REVERSE') {
+    //     // scene.setTween(itemLeft, 1, {x:'0%', opacity: 1})
+    //     scene.setTween(SlideIn)
+    //   }
+    //   else {
+    //       scene.setTween(itemLeft, 1, {x:'0%', opacity: 1})
+    //   }
+    // })
     .addTo(controller)
 
   })
