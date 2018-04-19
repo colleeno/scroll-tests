@@ -17,7 +17,6 @@ $(document).ready(function () {
       triggerHook: 'onLeave',
       duration: '100%'
     })
-    // .setTween(itemScroll, 1, {y: '-50%', ease:Linear.easeNone})
     .setTween(timeline)
     .addTo(controller)
   })
@@ -40,17 +39,17 @@ $(document).ready(function () {
     var itemRight = $(this).find('.right-block')
     var itemLeft = $(this).find('.left-block')
 
-    var SlideIn = new TimelineMax()
+    var timeline = new TimelineMax()
     var itemLeft = TweenMax.from(itemLeft, 1,{ x: '-30%' , opacity: 0});
     var itemRight = TweenMax.from(itemRight, 1,{ x: '30%' , opacity: 0});
-      SlideIn.add(itemLeft).add(itemRight, 0);
+      timeline.add(itemLeft).add(itemRight, 0);
 
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 'onEnter',
       duration: '120%'
     })
-    .setTween(SlideIn)
+    .setTween(timeline)
       // to run in one direction
     // .on('enter', function(event){
     //   if (event.scrollDirection != 'REVERSE') {
