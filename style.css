@@ -52,7 +52,16 @@ body {
 .scroll-blocks.right .highlight-block {
   left: -5%;
 }
-
+.block-line {
+  width: 30%;
+}
+.block-line .line-wrapper {
+  margin: 0 auto;
+}
+.block-line .highlight-block {
+  width: 100%;
+  top: 130px;
+}
 .content-block {
   background: navy;
   color: white;
