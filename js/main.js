@@ -2,6 +2,7 @@ console.log('linked')
 
 $(document).ready(function () {
 
+
   //Set up controller
   var controller = new ScrollMagic.Controller()
 
@@ -34,22 +35,25 @@ $(document).ready(function () {
     .addTo(controller)
   })
 
+
+
   // Side Blocks - Enter
   $('.side-blocks').each(function(){
     var itemRight = $(this).find('.right-block')
     var itemLeft = $(this).find('.left-block')
 
-    var timeline = new TimelineMax()
+    if (window.innerWidth > 768) {
+    var timelines = new TimelineMax()
     var itemLeft = TweenMax.from(itemLeft, 1,{ x: '-30%' , opacity: 0});
     var itemRight = TweenMax.from(itemRight, 1,{ x: '30%' , opacity: 0});
-      timeline.add(itemLeft).add(itemRight, 0);
+      timelines.add(itemLeft).add(itemRight, 0);
 
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 'onEnter',
       duration: '120%'
     })
-    .setTween(timeline)
+    .setTween(timelines)
       // to run in one direction
     // .on('enter', function(event){
     //   if (event.scrollDirection != 'REVERSE') {
@@ -61,8 +65,11 @@ $(document).ready(function () {
     //   }
     // })
     .addTo(controller)
+  }
 
   })
+
+
 
   //Line Animation
   $('.line-wrapper').each(function(){
@@ -76,6 +83,10 @@ $(document).ready(function () {
     .setTween(line, 1, {scaleY:0, opacity: '0'})
     .addTo(controller)
   })
+
+
+
+
 
 
 })
