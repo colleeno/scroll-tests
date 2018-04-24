@@ -85,6 +85,18 @@ $(document).ready(function () {
   })
 
 
+  //Highlight Block Text
+  $('.highlight-block').each(function(){
+    var text = $(this).find('h2');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: this,
+      triggerHook: 'onEnter',
+      offset: '100',
+      duration: '50%'
+    })
+    .setTween(text, 1, {opacity:'0.5', y: '-80%', ease:Linear.easeNone})
+    .addTo(controller)
+  })
 
 
 
