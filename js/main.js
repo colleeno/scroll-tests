@@ -88,13 +88,20 @@ $(document).ready(function () {
   //Highlight Block Text
   $('.highlight-block').each(function(){
     var text = $(this).find('h2');
+    var subText = $(this).find('p')
+    var tl = new TimelineMax ()
+
+    text = TweenMax.from(text, 1, {opacity:'0.5', y:'35px', ease:Power1.easeInOut })
+    subText = TweenMax.from(subText, 1, {opacity:'0.5', y:'35px', ease:Power1.easeInOut })
+
+    tl.add(text).add(subText, 0.5)
     var scene = new ScrollMagic.Scene({
       triggerElement: this,
       triggerHook: 'onEnter',
-      offset: '100',
+      offset: '0',
       duration: '50%'
     })
-    .setTween(text, 1, {opacity:'0.5', y: '-80%', ease:Linear.easeNone})
+    .setTween(tl)
     .addTo(controller)
   })
 
